@@ -1,0 +1,3 @@
+id:int:PK
+name:string:
+salary:int:
