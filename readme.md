@@ -1,137 +1,101 @@
-Tables Management System
+# 🗃️ Tables Management System
 
-Overview
+A simple bash-based command-line interface for managing database tables using a file-based storage system.
 
-This script allows for the management of database tables through a command-line interface. It provides functionalities to create, update, delete, and query tables stored in a file-based database system.
+## 📌 Overview
 
-Features
+This script provides full table management operations including creation, update, deletion, and querying. It's designed for educational or lightweight database simulation use cases.
 
-Create Table
+## ✨ Features
 
-Allows the user to define a new table with a specified name, number of columns, column names, and data types.
+### 📁 Create Table
+- Define a new table with a name, column count, column names, and data types.
+- Choose a primary key for the table.
 
-Supports primary key selection for a table.
+### 📋 List Tables
+- View all existing tables in the selected database.
 
-List Tables
+### 🗑️ Drop Table
+- Remove a table and its metadata.
 
-Displays all tables in the current database directory.
+### ➕ Insert Data
+- Add rows to an existing table.
+- Validates data types and ensures primary key uniqueness.
 
-Drop Table
+### 🔍 Select Data
+- Select all rows.
+- Select rows by primary key.
+- Select specific columns.
 
-Deletes an existing table and its metadata from the database.
+### ❌ Delete Data
+- Delete all rows from a table.
+- Delete specific rows by primary key.
+- Delete columns (excluding primary key columns).
 
-Insert Data
+### 🛠️ Update Data
+- Update specific columns for a row using the primary key.
 
-Inserts rows of data into an existing table.
+## 🧰 Requirements
+- Bash Shell
+- Basic command-line knowledge
 
-Validates data types and enforces primary key constraints.
+## 🚀 Installation
 
-Select Data
-
-Allows querying of table data, including:
-
-Selecting all rows.
-
-Selecting specific rows by primary key.
-
-Selecting specific columns.
-
-Delete Data
-
-Deletes:
-
-All rows in a table.
-
-Specific rows based on primary key.
-
-Specific columns, excluding primary key columns.
-
-Update Data
-
-Updates specific columns of a row identified by the primary key.
-
-Requirements
-
-Bash shell
-
-Basic knowledge of command-line operations
-
-Installation
-
-Clone the repository:
-
+```bash
 git clone <repository-url>
-
-Navigate to the project directory:
-
 cd <repository-directory>
-
-Set execute permissions for the script:
-
 chmod +x <script-name>.sh
+```
 
-Usage
+## 🖥️ Usage
 
-Run the script and pass the database name as an argument:
-
+```bash
 ./<script-name>.sh <database-name>
+```
 
-Available Options
+### Menu Options
+- Create Table
+- List Tables
+- Drop Table
+- Insert Data
+- Select Data
+- Delete Data
+- Update Data
 
-Create Table: Creates a new table in the specified database.
+## 📂 Directory Structure
 
-List Tables: Lists all tables in the database.
-
-Drop Table: Deletes a table from the database.
-
-Insert Data: Adds new rows to a table.
-
-Select Data: Queries data from a table.
-
-Delete Data: Deletes rows or columns from a table.
-
-Update Data: Updates specific rows and columns in a table.
-
-Directory Structure
-
+```
 ./databases
-   |-- <database-name>
-       |-- <table-name>        # Data for the table
-       |-- .<table-name>       # Metadata for the table
+  └── <database-name>
+      ├── <table-name>        # Data for the table
+      └── .<table-name>       # Metadata for the table
+```
 
-Log Messages
+## 📣 Log Messages
 
-FAIL: Indicates an error or invalid operation (Red).
+- ✅ `PASS`: Successful operations (Green)
+- ❌ `FAIL`: Errors or invalid operations (Red)
+- ℹ️ `INFO`: Informational messages (Yellow)
+- 📌 `HEADER`: Section headers (Blue)
 
-PASS: Indicates a successful operation (Green).
+## ⚠️ Known Limitations
 
-INFO: Provides informational messages (Yellow).
+- No support for `WHERE` clause or advanced querying
+- Supports only `int` and `string` data types
+- Cannot delete primary key columns
 
-HEADER: Displays header messages (Blue).
+## 🔮 Future Enhancements
 
-Known Limitations
+- Add conditional queries (e.g., WHERE support)
+- Expand data type support
+- Add user authentication
+- Improve error handling and implement unit tests
 
-Does not support advanced querying with conditions.
+## 🤝 Contribution
 
-Data types are limited to int and string.
+Contributions are welcome!  
+Fork this repository and submit pull requests for bug fixes or new features.
 
-Deleting specific columns cannot remove primary key columns.
+## 📄 License
 
-Future Enhancements
-
-Add support for advanced querying (e.g., WHERE clauses).
-
-Introduce more data types and validations.
-
-Implement user authentication for database access.
-
-Improve error handling and add unit tests.
-
-Contribution
-
-Feel free to fork this repository and submit pull requests for new features or bug fixes. Contributions are welcome!
-
-License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
